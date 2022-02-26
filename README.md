@@ -11,6 +11,9 @@ npx cypress open
 ```
 a následne si vyberieš verziu stránky (AJ alebo SVK), ktorú chceš spustiť.
 
+## Popis projektu
+Projekt má za úlohu preskúmať, či funguje kontaktný formulár na stránke bart.sk podľa očakávaní.
+
 ## Zmeny v projekte
  1. Na elementy sa odkazujem len cez IDčká, až na case, kde kontrolujem či submit button má danú classu, pretože ona ovláda jeho animáciu
  2. Kontrolujem aj anglickú verziu stránky
@@ -27,3 +30,6 @@ a následne si vyberieš verziu stránky (AJ alebo SVK), ktorú chceš spustiť.
  a aj to len niekedy. Nechápem prečo sa tak deje.
  Preto je tam aj funkcia cy.wait(), pretože som chcel docielit to, aby čakal test na kliknutom inpute, až kým sa neoverí jeho border.
  Ponechal som aj test s osobnými údajmi, kde hodí cors chybu.
+
+## Použité technológie
+Cypress
