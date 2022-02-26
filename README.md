@@ -1,5 +1,8 @@
 # bart-tretia-uloha
 
+## Popis projektu
+Projekt má za úlohu preskúmať, či funguje kontaktný formulár na stránke bart.sk podľa očakávaní.
+
 ## Inštalácia
 Na nainštalovanie dependencies zadaj do terminálu príkaz:
 ```bash
@@ -10,9 +13,6 @@ Projekt spustíš zadaním príkazu:
 npx cypress open
 ```
 a následne si vyberieš verziu stránky (AJ alebo SVK), ktorú chceš spustiť.
-
-## Popis projektu
-Projekt má za úlohu preskúmať, či funguje kontaktný formulár na stránke bart.sk podľa očakávaní.
 
 ## Zmeny v projekte
  1. Na elementy sa odkazujem len cez IDčká, až na case, kde kontrolujem či submit button má danú classu, pretože ona ovláda jeho animáciu
