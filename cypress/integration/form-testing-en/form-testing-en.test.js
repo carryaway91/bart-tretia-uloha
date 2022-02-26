@@ -15,42 +15,44 @@ import {
   submitBtnShouldHaveLoaderClass,
 } from "../../../utils/utils";
 
-describe("Testing Bart.sk contact form in slovak language", () => {
+describe("Testing Bart.sk contact form in english", () => {
   beforeEach(() => {
-    cy.visit("https://www.bart.sk/mam-zaujem-test");
+    cy.visit("https://www.bart.sk/en/interested-in-test");
     cy.get("#c-p-bn").click();
   });
-  it("Go to 'Mám záujem' bart.sk page", () => {
-    cy.visit("https://www.bart.sk/mam-zaujem-test");
+
+  it("Go to 'I'm interested' bart.sk page", () => {
+    cy.visit("https://www.bart.sk/en/interested-in-test");
     cy.get("#contact-form").should("exist");
     const inputLabelNames = [
-      "Vaše meno",
-      "Názov spoločnosti",
+      "Name",
+      "Company",
       "E-mail",
-      "Telefón",
-      "Krátky popis Vášho projektu",
+      "Phone",
+      "Short description of your project",
     ];
     const inputIDs = ["name", "company-name", "email", "tel", "message"];
     shouldHaveClickableLabels(inputLabelNames, inputIDs);
     shouldHaveValidInputs();
 
-    const header = "Mám záujem o...";
+    const header = "I'm interested in...";
     const interests = [
-      "Dizajn",
-      "Programovanie",
+      "Design",
+      "Software engineering",
       "Online marketing",
-      "Webová a mobilná aplikácia",
-      "Internetový obchod",
-      "Web stránka",
-      "Redakčný systém",
+      "Web and mobile application",
+      "E-shop",
+      "Website",
+      "Content management system",
     ];
     shouldHaveInterestInLabels(header, interests);
     shouldHighlightInputOnClick();
     shouldHighlightInputAfterLabelClick();
     shouldCheckAndUncheckInputs();
 
-    const text = "Odoslaním súhlasite so spracovaním osobných údajov.";
-    const link = "/files/ochrana_osobnych_udajov_sk_SK.pdf";
+    const text =
+      "By submitting, you consent to the processing of your personal data.";
+    const link = "/files/ochrana_osobnych_udajov_en_US.pdf";
     shouldHavePersonalInfoLink(text, link);
   });
 
@@ -63,9 +65,9 @@ describe("Testing Bart.sk contact form in slovak language", () => {
   });
 
   it("After sent form", () => {
-    const mainHeader = "Ďakujem za vyplnenie žiadosti";
+    const mainHeader = "Thank you for your request.";
     const subHeader =
-      "Vaša žiadosť bola úspešne odoslaná. V priebehu najbližších dvoch pracovných dní Vás budem kontaktovať.";
+      "Your request has been successfully submitted. Within the next two business days I will contact you.";
     shouldShowSuccessNotification(mainHeader, subHeader);
   });
 
@@ -74,11 +76,11 @@ describe("Testing Bart.sk contact form in slovak language", () => {
   });
 
   it("Click on highlighted input with error message", () => {
-    shouldRemoveBorderUponFocus("https://www.bart.sk/mam-zaujem-test");
+    shouldRemoveBorderUponFocus("https://www.bart.sk/en/interested-in-test");
   });
 
-  it("Click on 'ochrana osobných údajov' link", () => {
-    const link = "/files/ochrana_osobnych_udajov_sk_SK.pdf";
+  it("Click on 'personal data' link", () => {
+    const link = "/files/ochrana_osobnych_udajov_en_US.pdf";
     shouldRedirectToPersonalData(link);
   });
 });
